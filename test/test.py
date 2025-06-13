@@ -1,6 +1,6 @@
 # test/test.py
 
-from conversor import Distancia, Masa, Temperatura, Velocidad
+from src import Distancia, Masa, Temperatura, Velocidad
 
 print("DISTANCIA")
 print(Distancia.km_to_mi(5))     # 5 km ≈ 3.1069 mi
