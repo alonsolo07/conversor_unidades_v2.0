@@ -18,13 +18,10 @@ pip install conversor-unidades
 
 | Categoría      | Ejemplos de unidades                                   |
 |----------------|--------------------------------------------------------|
-| Longitud       | mm, cm, m, km, in, ft, yd, mi                          |
-| Masa           | mg, g, kg, lb, oz                                      |
-| Temperatura    | °C, °F, K                                             |
-| Tiempo         | s, min, h, d                                           |
-| Volumen        | ml, l, m³, gal (US/UK)                                 |
-| Velocidad      | m/s, km/h, mph, kn                                     |
-| Energía        | J, kJ, cal, kWh                                        |
+| Longitud       | m,  km,  mi                                              |
+| Masa           | g,  kg,  lb                                              |
+| Temperatura    | °C,  °F,  K                                              |
+| Velocidad      | m/s,  km/h,  mph                                         |
 
 - API clara (`convertir()` y funciones específicas por magnitud)
 - Precisión basada en el paquete **pint**
