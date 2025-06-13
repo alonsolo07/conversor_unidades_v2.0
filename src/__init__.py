@@ -1,6 +1,6 @@
-from .velocity import Velocidad
-from .mass import Masa
-from .distance import Distancia
-from .temperature import Temperatura
+from .velocidad import Velocidad
+from .masa import Masa
+from .distancia import Distancia
+from .temperatura import Temperatura
 
 __all__ = ["distancia", "masa", "temperatura", "velocidad"]
