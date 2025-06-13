@@ -1,4 +1,4 @@
-from conversor import distancia, masa, temperatura, velocidad
+from src import distancia, masa, temperatura, velocidad
 
 print(distancia(5, "km", "mi"))          # ≈ 3.1069
 print(masa(2000, "g", "lb"))             # ≈ 4.4092
