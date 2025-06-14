@@ -1,7 +1,13 @@
-# Descripción:
-#   Módulo para la conversión entre diferentes unidades de velocidad.
-#   Proporciona métodos estáticos para convertir entre Kilometros/h, Metros/s y Millas/h.
+"""
+Clase para la conversión entre diferentes unidades de velocidad.
+Proporciona métodos estáticos para convertir entre Kilometros/h, Metros/s y Millas/h.
 
+Atributos:
+conversiones (dict): Diccionario con factores de conversión a Metros/s (unidad base).
+
+Métodos:
+convertir(valor, unidad_origen, unidad_destino): Convierte un valor de una unidad a otra.
+"""
 from .conversor import Conversor
 
 class Velocidad(Conversor):

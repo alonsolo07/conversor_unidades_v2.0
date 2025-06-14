@@ -196,4 +196,4 @@ cython_debug/
 
 # ALONSO
 
-conversor_unidades_venv/
+conversor_unidades*

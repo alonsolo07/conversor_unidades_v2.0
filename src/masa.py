@@ -1,6 +1,13 @@
-# Descripción:
-#   Módulo para la conversión entre diferentes unidades de masa.
-#   Proporciona métodos estáticos para convertir entre kilógramos, gramos y libras.
+"""
+Clase para la conversión entre diferentes unidades de masa.
+Proporciona métodos estáticos para convertir entre kilógramos, gramos y libras.
+
+Atributos:
+conversiones (dict): Diccionario con factores de conversión a kilógramos (unidad base).
+
+Métodos:
+convertir(valor, unidad_origen, unidad_destino): Convierte un valor de una unidad a otra.
+"""
 
 from .conversor import Conversor
 

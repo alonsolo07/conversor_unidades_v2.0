@@ -1,6 +1,43 @@
 # 🔄 Conversor de Unidades
 
-**Conversor de Unidades** es una librería **Python** que facilita la conversión precisa entre distintas magnitudes físicas (longitud, masa, temperatura, tiempo, volumen y más), siguiendo buenas prácticas de programación y diseño modular.
+**Conversor de Unidades** es una librería **Python** que facilita la conversión precisa entre distintas magnitudes físicas (distancia, masa, temperatura y velocidad), siguiendo buenas prácticas de programación y diseño modular.
+
+---
+
+## ✨ Características
+
+| Categoría      | Ejemplos de unidades                                   |
+|----------------|--------------------------------------------------------|
+| Longitud       | m,  km,  mi                                              |
+| Masa           | g,  kg,  lb                                              |
+| Temperatura    | °C,  °F,  K                                              |
+| Velocidad      | m/s,  km/h,  mph                                         |
+
+- API clara (`convertir()` y funciones específicas por magnitud)
+- Precisión basada en el paquete **pint**
+- Conversión encadenada y formato de resultados configurable
+- Manejo de errores (unidades incompatibles, divisiones por cero, etc.)
+- Tipado estático con **type hints** y cobertura completa de tests
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+conversor-unidades/
+├── src/
+│   ├── __init__.py
+│   ├── conversor.py
+│   ├── longitud.py
+│   ├── masa.py
+│   ├── temperatura.py
+│   ├── volumen.py
+├── test/
+│   └── test.py
+├── requirements.txt
+├── setup.py
+└── README.md
+```
 
 ---
 
@@ -14,76 +51,37 @@ pip install conversor-unidades
 
 ---
 
-## ✨ Características
+## 🛠️ Puesta a punto
 
-| Categoría      | Ejemplos de unidades                                   |
-|----------------|--------------------------------------------------------|
-| Longitud       | mm, cm, m, km, in, ft, yd, mi                          |
-| Masa           | mg, g, kg, lb, oz                                      |
-| Temperatura    | °C, °F, K                                             |
-| Tiempo         | s, min, h, d                                           |
-| Volumen        | ml, l, m³, gal (US/UK)                                 |
-| Velocidad      | m/s, km/h, mph, kn                                     |
-| Energía        | J, kJ, cal, kWh                                        |
-
-- API clara (`convertir()` y funciones específicas por magnitud)
-- Precisión basada en el paquete **pint**
-- Conversión encadenada y formato de resultados configurable
-- Manejo de errores (unidades incompatibles, divisiones por cero, etc.)
-- Tipado estático con **type hints** y cobertura completa de tests
+1. Clona este repositorio en la ruta que desees
+   ```bash
+   git clone https://github.com/alonsolo07/conversor_unidades_v2.0
+   ```
+2. Crea un entorno virtual y activalo
+   ```bash
+   python -m venv conversor_unidades_venv
+   .\conversor_unidades_venv\Scripts\activate  # En Windows
+   ```
+3. Instala el paquete en modo editable  
+   ```bash
+   pip install -e .
+   ```
 
 ---
+
 
 ## 🧰 Uso Básico
 
 ```python
-from conversor_unidades import convertir, Longitud, Temperatura
-
-# Conversión genérica
-km = convertir(12_500, origen="m", destino="km")        # 12.5
-
-# Conversión con clases helper
-metros = Longitud.to_metros(3, unidad_origen="ft")      # 0.9144
-celsius = Temperatura.to_celsius(68, unidad_origen="F") # 20.0
-```
-
-### Conversión Encadenada
-
-```python
 from conversor_unidades import convertir
 
-# 5 millas → metros → kilómetros
-resultado = convertir(5, "mi", "m").pipe(
-    lambda m: convertir(m, "m", "km")
-)
-# 8.04672
+# Conversión genérica
+km = convertir(12500, "m", "km")        # 12.5
 ```
 
 ---
 
-## 🗂️ Estructura del Proyecto
 
-```
-conversor-unidades/
-├── src/
-│   └── conversor_unidades/
-│       ├── __init__.py
-│       ├── core.py
-│       ├── excepciones.py
-│       ├── categorias/
-│       │   ├── base.py
-│       │   ├── longitud.py
-│       │   ├── masa.py
-│       │   ├── temperatura.py
-│       │   └── volumen.py
-├── tests/
-│   └── test_conversor.py
-├── requirements.txt
-├── setup.py
-└── README.md
-```
-
----
 
 ## 🧪 Ejecutar Pruebas
 
@@ -93,24 +91,6 @@ pytest
 
 ---
 
-## 🛠️ Desarrollo
-
-1. Clona este repositorio  
-2. Crea un entorno virtual  
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Windows: .venv\Scripts\activate
-   ```
-3. Instala dependencias de desarrollo  
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Instala el paquete en modo editable  
-   ```bash
-   pip install -e .
-   ```
-
----
 
 ## ✅ Buenas Prácticas Implementadas
 
@@ -119,9 +99,7 @@ pytest
 3. **Documentación** completa con *docstrings* y ejemplos  
 4. **Tipado Estático** con *mypy* y *type hints*  
 5. **Cobertura de Pruebas** > 90 % con *pytest*  
-6. **Manejo de Errores** específico mediante excepciones personalizadas  
-7. **CI/CD** con GitHub Actions (lint, tests, build)  
-8. **Código Limpio** y estilo consistente con *black* y *isort*  
+6. **Manejo de Errores** para unidades no soportadas  
 
 ---
 
@@ -136,10 +114,10 @@ pytest
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+Este proyecto está licenciado bajo la **Licencia MIT**. 
 
 ---
 
 ## 👤 Autor
 
-Desarrollado por **[Tu Nombre]**. ¡Se agradecen *issues* y *pull requests*!
+Desarrollado por Alonso Lara Ordóñez. ¡Se agradecen *issues* y *pull requests*!

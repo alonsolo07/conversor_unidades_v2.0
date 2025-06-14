@@ -1,7 +1,13 @@
-# Descripción:
-#   Módulo para la conversión entre diferentes unidades de medicion de temperatura.
-#   Proporciona métodos estáticos para convertir entre grados centigrados (°C), grados Kelvin (K) y Fahrenheit (°F).
+"""
+Clase para la conversión entre diferentes unidades de medicion de temperatura.
+Proporciona métodos estáticos para convertir entre grados centigrados (°C), grados Kelvin (K)
 
+Atributos:
+conversiones (dict): Diccionario con factores de conversión entre unidades.
+
+Métodos:
+convertir(valor, unidad_origen, unidad_destino): Convierte un valor de una unidad a otra.
+"""
 class Temperatura:
 
     @staticmethod
