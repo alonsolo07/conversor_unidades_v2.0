@@ -15,7 +15,7 @@ class Conversor:
         Raises:
             ValueError: Si la conversión entre unidades no está soportada.
     """
-
+    @classmethod
     def convertir(cls, valor: float, unidad_origen: str, unidad_destino: str) -> float:
         unidad_origen = unidad_origen.lower()
         unidad_destino = unidad_destino.lower()
