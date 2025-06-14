@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="conversor_unidades",
-    version="0.2.0",
+    version="2.1",
     description="A Python library for unit conversion: velocity, mass, distance, and temperature.",
     long_description=long_description,
     long_description_content_type="text/markdown",
