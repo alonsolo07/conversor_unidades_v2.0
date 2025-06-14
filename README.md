@@ -82,16 +82,6 @@ km = convertir(12500, "m", "km")        # 12.5
 ---
 
 
-
-## 🧪 Ejecutar Pruebas
-
-```bash
-pytest
-```
-
----
-
-
 ## ✅ Buenas Prácticas Implementadas
 
 1. **Programación Orientada a Objetos** con clases por categoría de unidades  
