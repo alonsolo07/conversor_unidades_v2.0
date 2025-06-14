@@ -2,22 +2,12 @@
 #   Módulo para la conversión entre diferentes unidades de velocidad.
 #   Proporciona métodos estáticos para convertir entre Kilometros/h, Metros/s y Millas/h.
 
-class Velocidad:
+from .conversor import Conversor
 
-    def kmh_to_mps(value: float = 1) -> float:
-        return value / 3.6
-
-    def mps_to_kmh(value: float = 1) -> float:
-        return value * 3.6
-
-    def mph_to_mps(value: float = 1) -> float:
-        return value * 0.44704
-
-    def mps_to_mph(value: float = 1) -> float:
-        return value / 0.44704
-
-    def kmh_to_mph(value: float = 1) -> float:
-        return Velocidad.mps_to_mph(Velocidad.kmh_to_mps(value))
-
-    def mph_to_kmh(value: float = 1) -> float:
-        return Velocidad.mps_to_kmh(Velocidad.mph_to_mps(value))
+class Velocidad(Conversor):
+    # Unidad base: metros por segundo (m/s)
+    conversiones = {
+        "kmh": 1000 / 3600,     # 1 km/h = 0.277777...
+        "mps": 1,
+        "mph": 1609.344 / 3600  # 1 mph = 0.44704
+    }
