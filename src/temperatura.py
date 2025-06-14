@@ -4,20 +4,30 @@
 
 class Temperatura:
 
-    def c_to_f(value: float = 0) -> float:
-        return (value * 9/5) + 32
+    @staticmethod
+    def convertir(valor, unidad_origen, unidad_destino):
+        unidad_origen = unidad_origen.lower()
+        unidad_destino = unidad_destino.lower()
 
-    def f_to_c(value: float = 32) -> float:
-        return (value - 32) * 5/9
+        if unidad_origen == unidad_destino:
+            return valor
 
-    def c_to_k(value: float = 0) -> float:
-        return value + 273.15
+        if unidad_origen == "c":
+            if unidad_destino == "f":
+                return (valor * 9/5) + 32
+            elif unidad_destino == "k":
+                return valor + 273.15
 
-    def k_to_c(value: float = 273.15) -> float:
-        return value - 273.15
+        elif unidad_origen == "f":
+            if unidad_destino == "c":
+                return (valor - 32) * 5/9
+            elif unidad_destino == "k":
+                return (valor - 32) * 5/9 + 273.15
 
-    def f_to_k(value: float = 32) -> float:
-        return Temperatura.c_to_k(Temperatura.f_to_c(value))
+        elif unidad_origen == "k":
+            if unidad_destino == "c":
+                return valor - 273.15
+            elif unidad_destino == "f":
+                return (valor - 273.15) * 9/5 + 32
 
-    def k_to_f(value: float = 273.15) -> float:
-        return Temperatura.c_to_f(Temperatura.k_to_c(value))
+        raise ValueError(f"Conversión no soportada: {unidad_origen} → {unidad_destino}")

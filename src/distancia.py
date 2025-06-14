@@ -2,22 +2,12 @@
 #   Módulo para la conversión entre diferentes unidades de distancia.
 #   Proporciona métodos estáticos para convertir entre kilómetros, metros y millas.
 
-class Distancia:
+from .conversor import Conversor
 
-    def km_to_m(value: float = 1) -> float:
-        return value * 1000
-
-    def m_to_km(value: float = 1) -> float:
-        return value / 1000
-
-    def m_to_mi(value: float = 1) -> float:
-        return value / 1609.344
-
-    def mi_to_m(value: float = 1) -> float:
-        return value * 1609.344
-
-    def km_to_mi(value: float = 1) -> float:
-        return Distancia.m_to_mi(Distancia.km_to_m(value))
-
-    def mi_to_km(value: float = 1) -> float:
-        return Distancia.m_to_km(Distancia.mi_to_m(value))
+class Distancia(Conversor):
+    # Todas las unidades se convierten a "metro" como base
+    conversiones = {
+        "km": 1000,
+        "m": 1,
+        "mi": 1609.344
+    }
